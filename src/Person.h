@@ -3,9 +3,7 @@
 
 #include <string>
 #include <ostream>
-#include "BankTransferSender.h"
-#include "CashSender.h"
-#include "CheckSender.h"
+#include "IBankServices.h"
 
 /**
  * Abstract Class of Person
@@ -31,9 +29,7 @@ public:
 
     void setDocumentId(int documentId);
 
-    std::string processPaymentBankTransfer();
-    std::string processPaymentCash();
-    std::string processPaymentCheck();
+    string payment(IBankServices* bankServices);
 
     virtual std::string toString() const; // Virtual
 private:
